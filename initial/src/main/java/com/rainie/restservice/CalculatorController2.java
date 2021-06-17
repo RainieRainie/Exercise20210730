@@ -30,8 +30,7 @@ public class CalculatorController2 {
             if (b == 0) {
                 list.add ("I am " + (a + 2));
                 i--;
-            }
-            a--;
+            }            a--;
     }
         return new Calculator2(String.format(String.valueOf(list)));
     }
