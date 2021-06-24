@@ -11,7 +11,8 @@ public class UserManagementController {
 
     @GetMapping(value = "/api/user-management/user/{user}")
 
-    public UserResponse UserMgmt(@PathVariable String user){ String ageUrl; String genderUrl; String nationalityUrl;
+    public UserResponse UserMgmt(@PathVariable String user){
+        String ageUrl; String genderUrl; String nationalityUrl;
         ageUrl = "https://api.agify.io?name=" + user;
         AgifyResponse quote = restTemplate.getForObject(
                 ageUrl, AgifyResponse.class);
