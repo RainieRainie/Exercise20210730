@@ -28,6 +28,5 @@ public class User {
 
 
     @EqualsAndHashCode.Exclude private String created;
-
-    //  @EqualsAndHashCode.Exclude private String updated;
+    @EqualsAndHashCode.Exclude private String updated;
     }

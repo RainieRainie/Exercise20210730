@@ -37,24 +37,10 @@ public class AddUserServiceImpl implements AddUserService {
         user.setNationality(user_api.getNationality());
         user.setPassword(userInformationPush.getPassword());
         user.setStatus(user_gen.getStatus());
+        user.setCreated(user_gen.getCreated());
+        user.setUpdated(user_gen.getUpdated());
         user.setTags(user_gen.getTags());
 
-
-
- /*       User user = new User(user_gen.getUsername(),
-                userInformationPush.getPassword(),
-                userInformationPush.getFirstName(),
-                userInformationPush.getLastName(),
-                userInformationPush.getEmail(),
-                userInformationPush.getContactNumber(),
-                user_api.getAge(),
-                user_api.getGender(),
-                user_api.getNationality(),
-                user_gen.getTags(),
-                user_gen.getStatus());
-        //          user_gen.getCreated(),
-    //          user_gen.getUpdated());
-*/
        return user;
     }
 }
