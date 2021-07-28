@@ -25,7 +25,6 @@ public class UserManagementController2 {
         private UpdateUserServiceImpl updateUserServiceImpl;
 
         @PutMapping("/add")
-    //    @PostMapping("/add")
         @ResponseStatus(HttpStatus.CREATED)
         @ResponseBody
         public void addUser(@RequestBody UserInformationPush userInformationPush) {
