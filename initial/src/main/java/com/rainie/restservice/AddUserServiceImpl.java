@@ -2,10 +2,15 @@ package com.rainie.restservice;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Service
-public class AddUserServiceImpl implements AddUserService {
+public class AddUserServiceImpl extends Throwable implements AddUserService {
 
 
     @Autowired
@@ -19,7 +24,13 @@ public class AddUserServiceImpl implements AddUserService {
 
 //    @Autowired
 //    private UserInfoGen userInfoGen;
+@PostMapping
+@ResponseStatus(HttpStatus.CREATED)
+@ResponseBody
+public void addUser(@RequestBody UserInformationPush userInformationPush) {
+    User user_to_add = getUserInfoFull(userInformationPush);
 
+}
     @Override
     public User getUserInfoFull(UserInformationPush userInformationPush) {
 
@@ -37,7 +48,8 @@ public class AddUserServiceImpl implements AddUserService {
         user.setNationality(user_api.getNationality());
         user.setPassword(userInformationPush.getPassword());
         user.setStatus(user_gen.getStatus());
-        user.setCreated(user_gen.getCreated());
+   //     user.setCreated(user_gen.getCreated());
+        user.setCreated(InformationGenerator.getStringDate());
         user.setUpdated(user_gen.getUpdated());
         user.setTags(user_gen.getTags());
 
